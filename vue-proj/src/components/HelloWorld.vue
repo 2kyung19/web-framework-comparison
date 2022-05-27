@@ -30,12 +30,12 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
-    <GetYesOrNo />
+    <GetMockData />
   </div>
 </template>
 
 <script>
-import GetYesOrNo from '@/components/GetYesOrNo.vue';
+import GetMockData from '@/components/GetMockData.vue';
 
 export default {
   name: 'HelloWorld',
@@ -43,7 +43,7 @@ export default {
     msg: String,
   },
   components: {
-    GetYesOrNo,
+    GetMockData,
   },
 };
 </script>
