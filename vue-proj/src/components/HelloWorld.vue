@@ -31,11 +31,13 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
     <GetMockData />
+    <LoginBtn />
   </div>
 </template>
 
 <script>
 import GetMockData from '@/components/GetMockData.vue';
+import LoginBtn from '@/components/LoginBtn.vue';
 
 export default {
   name: 'HelloWorld',
@@ -44,6 +46,7 @@ export default {
   },
   components: {
     GetMockData,
+    LoginBtn,
   },
 };
 </script>
