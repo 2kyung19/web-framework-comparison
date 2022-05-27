@@ -18,11 +18,9 @@ export default {
       const vm = this;
       axios.get('/api/products') // ?error_code=400
         .then((res) => {
-          console.log(res.data);
           vm.answer = res.data;
         })
         .catch((err) => {
-          console.log(err);
           vm.answer = `err : ${err}`;
         });
     },
