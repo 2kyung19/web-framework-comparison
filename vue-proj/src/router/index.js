@@ -40,4 +40,6 @@ const router = createRouter({
   routes,
 });
 
+// $router.push
+
 export default router;

@@ -30,14 +30,16 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
-    <GetMockData />
-    <LoginBtn />
+    <get-mock-data />
+    <login-btn />
+    <get-item-list />
   </div>
 </template>
 
 <script>
 import GetMockData from '@/components/GetMockData.vue';
 import LoginBtn from '@/components/LoginBtn.vue';
+import GetItemList from '@/components/GetItemList.vue';
 
 export default {
   name: 'HelloWorld',
@@ -47,6 +49,7 @@ export default {
   components: {
     GetMockData,
     LoginBtn,
+    GetItemList,
   },
 };
 </script>
