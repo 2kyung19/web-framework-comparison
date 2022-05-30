@@ -1,7 +1,9 @@
 <template>
-    <ol>
-        <li v-for='item in itemList' :key="item.name">{{ item.name }}</li>
-    </ol>
+    <ul>
+        <li v-for='item in itemList' :key="item.id">
+            <router-link :to="{name:'item', params:{id:item.id}}">{{ item.id }}</router-link>
+        </li>
+    </ul>
     <div ref='trigger'>-</div>
 </template>
 
@@ -15,12 +17,14 @@ export default {
   },
   methods: {
     loadItems() {
+      const len = this.itemList.length;
+
       this.itemList = this.itemList.concat([
-        { name: 'a' },
-        { name: 'aa' },
-        { name: 'aaa' },
-        { name: 'aaaa' },
-        { name: 'aaaaa' },
+        { id: len + 1 },
+        { id: len + 2 },
+        { id: len + 3 },
+        { id: len + 4 },
+        { id: len + 5 },
       ]);
     },
     initIntersectionObserver() {

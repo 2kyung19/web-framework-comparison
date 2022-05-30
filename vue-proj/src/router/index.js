@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginView from '@/views/LoginView.vue';
+import InfoItem from '@/views/InfoItem.vue';
 import HomeView from '../views/HomeView.vue';
 
 // 로그인 안되어있으면 login 페이지로 redirect
@@ -32,6 +33,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: LoginView,
+  },
+  {
+    path: '/item/:id',
+    name: 'item',
+    component: InfoItem,
   },
 ];
 
