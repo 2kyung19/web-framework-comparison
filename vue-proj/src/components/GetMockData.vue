@@ -1,10 +1,12 @@
 <template>
-    <button type="button" v-on:click='getAnswer'>버튼</button>
+    <button type="button" v-on:click='getAnswer1'>버튼1</button>
     <p>{{ answer }}</p>
+    <button type="button" v-on:click='getAnswer2'>버튼2</button>
 </template>
 
 <script>
 import axios from 'axios';
+import { getAPI } from '@/api/common';
 
 export default {
   name: 'GetYesOrNo',
@@ -14,7 +16,7 @@ export default {
     };
   },
   methods: {
-    getAnswer() {
+    getAnswer1() {
       const vm = this;
       axios.get('/api/products') // ?error_code=400
         .then((res) => {
@@ -23,6 +25,9 @@ export default {
         .catch((err) => {
           vm.answer = `err : ${err}`;
         });
+    },
+    getAnswer2() {
+      getAPI('');
     },
   },
 };

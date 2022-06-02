@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginView from '@/views/LoginView.vue';
 import InfoItem from '@/views/InfoItem.vue';
+import Error404 from '@/views/404Error.vue';
+import FileExport from '@/views/fileExportView.vue';
 import HomeView from '../views/HomeView.vue';
 
 // 로그인 안되어있으면 login 페이지로 redirect
@@ -38,6 +40,16 @@ const routes = [
     path: '/item/:id',
     name: 'item',
     component: InfoItem,
+  },
+  {
+    path: '/404',
+    name: '404',
+    component: Error404,
+  },
+  {
+    path: '/export',
+    name: 'export',
+    component: FileExport,
   },
 ];
 

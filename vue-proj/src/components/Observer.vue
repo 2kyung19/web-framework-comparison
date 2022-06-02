@@ -26,6 +26,9 @@ export default {
         { id: len + 4 },
         { id: len + 5 },
       ]);
+
+      window.sessionStorage.setItem('beforeItems', this.itemList);
+      // save scroll position
     },
     initIntersectionObserver() {
       const io = new IntersectionObserver(async ([entry], observer) => {

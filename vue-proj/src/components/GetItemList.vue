@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container" ref='scrollBox'>
         <h2 class='title'>infinite scroll</h2>
         <Observer />
     </div>
@@ -12,6 +12,9 @@ export default {
   name: 'GetItemList',
   components: {
     Observer,
+  },
+  mounted() {
+    this.$refs.scrollBox.scrollTop = 0;
   },
 };
 </script>
