@@ -45,6 +45,11 @@ const routes = [
     name: '404',
     component: Error404,
   },
+  {
+    path: '/kanban',
+    name: 'kanban',
+    component: () => import('../views/KanbanView.vue'),
+  },
 ];
 
 const router = createRouter({
