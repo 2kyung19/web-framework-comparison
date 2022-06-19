@@ -10,7 +10,7 @@
             :key="idx"
             class="kanban-ticket"
             draggable="true"
-            @drag="onDrag(item)"
+            @dragstart="onDrag(item)"
           >
             {{ item.title }}
           </div>
@@ -24,7 +24,7 @@
             :key="idx"
             class="kanban-ticket"
             draggable="true"
-            @drag="onDrag(item)"
+            @dragstart="onDrag(item)"
           >
             {{ item.title }}
           </div>
@@ -38,7 +38,7 @@
             :key="idx"
             class="kanban-ticket"
             draggable="true"
-            @drag="onDrag(item)"
+            @dragstart="onDrag(item)"
           >
             {{ item.title }}
           </div>
