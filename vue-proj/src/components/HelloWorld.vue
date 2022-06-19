@@ -1,38 +1,41 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest" target="_blank" rel="noopener">unit-jest</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+
     <get-mock-data />
     <login-btn />
     <get-item-list />
+    <v-slot-child>
+      <template #header>
+        <div>test header</div>
+      </template>
+      <template #footer>
+        <div>test footer</div>
+      </template>
+      <template #hide>
+        <div>not hide</div>
+      </template>
+    </v-slot-child>
+    <v-menu> <!-- menu -->
+      <template #activator="{ on, attrs }">
+        <div v-bind="attrs" v-on="on">
+          {{on}} / {{attrs}}
+        </div>
+        </template>
+    </v-menu>
+    <v-tooltip
+      v-model="isTooltipVisiable"
+    > <!-- 아 염병 -->
+      <template #activator="{ on, attrs }">
+        <div
+          v-bind="attrs"
+          v-on="on"
+        >
+          예?
+        </div>
+      </template>
+      <span>Programmatic tooltip</span>
+    </v-tooltip>
   </div>
 </template>
 
@@ -40,6 +43,8 @@
 import GetMockData from '@/components/GetMockData.vue';
 import LoginBtn from '@/components/LoginBtn.vue';
 import GetItemList from '@/components/GetItemList.vue';
+import VSlotChild from '@/components/VSlotChild.vue';
+import VMenu from '@/components/VMenu.vue';
 
 export default {
   name: 'HelloWorld',
@@ -50,6 +55,13 @@ export default {
     GetMockData,
     LoginBtn,
     GetItemList,
+    VSlotChild,
+    VMenu,
+  },
+  data() {
+    return {
+      isTooltipVisiable: true,
+    };
   },
 };
 </script>
